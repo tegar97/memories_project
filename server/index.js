@@ -5,6 +5,7 @@ import cors from 'cors'
 import postRoute from './routes/post.js'
 
 const app = express()
+app.use(cors())
 
 app.use(bodyParser.json({limit: '30mb',extended: true}))
 app.use(bodyParser.urlencoded({limit: '30mb',extended: true}))
@@ -12,7 +13,6 @@ app.use(bodyParser.urlencoded({limit: '30mb',extended: true}))
 app.use('/post',postRoute)
 
 
-app.use(cors())
 
 const CONNECTION_URL = 'mongodb+srv://tegar:tegar123xx@cluster0.xfdkb.mongodb.net/memories_project?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000

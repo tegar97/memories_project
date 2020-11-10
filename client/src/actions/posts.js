@@ -1,7 +1,7 @@
 import * as api from '../api'
 
 //Action Creator
-const getPosts = () => async(dispatch) => {
+export const getPosts = () => async(dispatch) => {
 
     try {
         const {data} = await api.fetchPost();

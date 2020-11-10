@@ -6,11 +6,13 @@ import Post from './component/Post/Post'
 import Form from './component/Form/Form';
 import useStyle from './styles'
 import {useDispatch} from 'react-redux'
-import {getPost} from './actions/'
+import {getPosts} from './actions/posts'
 function App() {
   const classes = useStyle()
   const dispatch = useDispatch()
-  getPost
+  useEffect(() =>{
+    dispatch(getPosts())
+  },[dispatch])
   return (
    <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
